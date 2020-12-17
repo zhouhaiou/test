@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+  <style>
+    html,
+    body {
+      height: 100%;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #ffa5a5;
+      overflow: hidden;
+    }
+
+    .open_msg {
+      /* opacity: 0; */
+      color: #fff;
+      text-align: center;
+      margin-top: 10%;
+      animation: FadeIn 1s linear;
+      animation-fill-mode: both;
+    }
+
+    .one {
+      animation-delay: 0s;
+      -webkit-animation-delay: 0s;
+      /* Safari 和 Chrome */
+    }
+
+    .two {
+      animation-delay: 2s;
+      -webkit-animation-delay: 2s;
+      /* Safari 和 Chrome */
+    }
+
+    .three {
+      animation-delay: 4s;
+      -webkit-animation-delay: 4s;
+      /* Safari 和 Chrome */
+    }
+
+    .chest {
+      display: none;
+      /* width: 500px; */
+      height: 500px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .heart {
+      position: absolute;
+      z-index: 2;
+      background: linear-gradient(-90deg, #F50A45 0%, #d5093c 40%);
+      animation: beat 0.7s ease 0s infinite normal;
+    }
+
+    .heart.center {
+      background: linear-gradient(-45deg, #B80734 0%, #d5093c 40%);
+    }
+
+    .heart.top {
+      z-index: 3;
+    }
+
+    .sided {
+      top: 100px;
+      width: 130px;
+      height: 130px;
+      border-radius: 100%;
+    }
+
+    .center {
+      width: 113px;
+      height: 113px;
+      bottom: 225px;
+      left: 131px;
+      transform: rotateZ(225deg);
+    }
+
+    .left {
+      left: 80px;
+    }
+
+    .right {
+      right: 80px;
+    }
+
+    @keyframes FadeIn {
+      0% {
+        opacity: 0;
+        -webkit-transform: scale(.1);
+      }
+
+      85% {
+        opacity: 1;
+        -webkit-transform: scale(1.05);
+      }
+
+      100% {
+        -webkit-transform: scale(1);
+      }
+    }
+
+    @keyframes beat {
+      0% {
+        transform: scale(1) rotate(225deg);
+        box-shadow: 0 0 40px #d5093c;
+      }
+
+      50% {
+        transform: scale(1.1) rotate(225deg);
+        box-shadow: 0 0 70px #d5093c;
+      }
+
+      100% {
+        transform: scale(1) rotate(225deg);
+        box-shadow: 0 0 40px #d5093c;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="js_open">
+    <div class="open_msg one">小黄鸭</div>
+    <div class="open_msg two">给你我一颗小心心呀</div>
+    <div class="open_msg three">By Mr.Zhou</div>
+  </div>
+  <div id="js_chest" class="chest">
+    <div class="heart left sided top"></div>
+    <div class="heart center"></div>
+    <div class="heart right sided"></div>
+  </div>
+</body>
+<script>
+  setTimeout(() => {
+    document.getElementById('js_open').style.display = 'none';
+    document.getElementById('js_chest').style.display = 'block';
+  }, 6000)
+</script>
+
+</html>
